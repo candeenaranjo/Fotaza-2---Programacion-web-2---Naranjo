@@ -1,0 +1,30 @@
+extends ../layout
+
+block contenido
+  h1 Crear cuenta
+
+  if error
+    p.error= error
+
+  form(action="/register" method="POST")
+    label Nombre
+    input(type="text" name="nombre" value=datos ? datos.nombre : '' required)
+
+    label Apellido
+    input(type="text" name="apellido" value=datos ? datos.apellido : '' required)
+
+    label Username
+    input(type="text" name="username" value=datos ? datos.username : '' required)
+
+    label Email
+    input(type="email" name="email" value=datos ? datos.email : '' required)
+
+    label Contraseña
+    input(type="password" name="password" required)
+
+    label Confirmar contraseña
+    input(type="password" name="confirmar" required)
+
+    button(type="submit") Registrarse
+
+  a(href="/login") ¿Ya tenés cuenta? Iniciá sesión

@@ -1,0 +1,11 @@
+extends layout
+
+block contenido
+  h1 Bienvenido a Fotaza 2
+  if usuarioActual
+    p Hola, #{usuarioActual.nombre}!
+  else
+    p
+      a(href="/login") Iniciá sesión
+      |  o 
+      a(href="/register") registrate

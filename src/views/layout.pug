@@ -1,0 +1,20 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= titulo || 'Fotaza 2'
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    nav
+      a(href="/") Fotaza 2
+      if usuarioActual
+        span Hola, #{usuarioActual.nombre}
+        form(action="/logout" method="POST" style="display:inline")
+          button(type="submit") Cerrar sesión
+      else
+        a(href="/login") Iniciar sesión
+        a(href="/register") Registrarse
+
+    main
+      block contenido
