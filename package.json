@@ -1,0 +1,32 @@
+{
+  "name": "fotaza-2---programacion-web-2---naranjo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "db:init": "node scripts/initDB.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candeenaranjo/Fotaza-2---Programacion-web-2---Naranjo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/candeenaranjo/Fotaza-2---Programacion-web-2---Naranjo/issues"
+  },
+  "homepage": "https://github.com/candeenaranjo/Fotaza-2---Programacion-web-2---Naranjo#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3",
+    "pug": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
