@@ -9,7 +9,7 @@ const authController = {
 
   //POST - register
   async registrar(req, res) {
-    const { nombre, apellido, username, email, password, confirmar } = req.body;
+    const { nombre, apellido, username, email, password, confirmar } = req.body;  
 
     // Validaciones BD
     if (!nombre || !apellido || !username || !email || !password) {
@@ -40,9 +40,9 @@ const authController = {
 
   //POST - login
   async login(req, res) {
-    const { email, password } = req.body;
+    const { email, password } = req.body; //lee los datos del form
 
-    if (!email || !password) {
+    if (!email || !password) {  //valida
       return res.render('auth/login', {
         titulo: 'Iniciar sesión',
         error: 'Completá todos los campos'
@@ -56,7 +56,7 @@ const authController = {
         nombre: 'Test',
         username: 'tester',
         rol: 'usuario'
-      };
+      };   
       return res.redirect('/');
     }
 

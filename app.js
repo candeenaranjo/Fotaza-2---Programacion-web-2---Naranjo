@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-//motor de plantillas
+//motor de vistas
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'src/views'));
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//sesiones 
+//configuracion de sesiones 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'secreto_temporal',
   resave: false,
@@ -23,7 +23,7 @@ app.use(session({
   cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }));
 
-//usuario disponible 
+//pasar el usuario a todas las vistas
 app.use((req, res, next) => {
   res.locals.usuarioActual = req.session.usuario || null;
   next();
